@@ -1,2 +1,9 @@
 # DogBreeds
-Using the Dog API: https://dog.ceo/api/breeds/list/all to display all dog breeds on a tableview. Used Alamofire to assist with the HTTP networking, and ViewAnimator to animate the table view when loaded. 
+
+Goal: Display dog breeds on a tableview with smooth scrolling.
+API: https://dog.ceo/api/breeds/list/all 
+Language: Swift 4.2 
+Xcode Version: 10
+Pods Used: 
+- Alamofire to assist with the HTTP networking. 
+- ViewAnimator to animate the table view when loaded. 
