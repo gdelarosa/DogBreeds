@@ -1,24 +1,20 @@
 PODS:
   - Alamofire (4.7.3)
-  - ListPlaceholder (1.2)
   - ViewAnimator (2.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
-  - ListPlaceholder
   - ViewAnimator
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - ListPlaceholder
     - ViewAnimator
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  ListPlaceholder: 48227c2f1ff0cd2f75c8e2bb26b5a45a29cf1d4c
   ViewAnimator: a849844cc3698620e1a562b510ed0c28aeafcdc5
 
-PODFILE CHECKSUM: cf1c7b9cd2a6cee1307c0e9f13e1211fe3b97a7a
+PODFILE CHECKSUM: 9336c415f773b712bdc712481bd247c1c1d4e0d9
 
 COCOAPODS: 1.5.3
