@@ -10,10 +10,12 @@ import Foundation
 import Alamofire
 
 class ApiRouter {
-    
-   /// Requesting the breed types from the URL while also decoding an instance of Breed type from a JSON object.
-   func requestBreeds(completion: @escaping([Breed]?, Error?) -> Void) {
+
+    /// Requesting the breed types from the URL while also decoding an instance of Breed type from a JSON object.
+    func requestBreeds(completion: @escaping([Breed]?, Error?) -> Void) {
+        
         let URL = "https://dog.ceo/api/breeds/list/all"
+        
         Alamofire.request(URL).responseJSON { response in
             let decoder = JSONDecoder()
             

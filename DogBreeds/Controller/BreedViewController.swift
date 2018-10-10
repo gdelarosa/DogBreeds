@@ -36,18 +36,22 @@ class BreedViewController: UIViewController, UITableViewDelegate, UITableViewDat
         breedListTable.animate(animations: rotateAnimation)
     }
    
-    /// Requesting data from server
+    /// Requesting data to be displayed on tableview.
     func requestFromApi() {
         router.requestBreeds { (data, error) in
+            
             if let data = data {
                 self.dogBreed = data
+            } else {
+                print("Error: \(String(describing: error))")
             }
             
-            let array = Array(self.dogBreed)[0].message.keys.sorted()
-            
+            let array = Array(self.dogBreed[0].message.keys.sorted())
             for type in array {
                 self.results.append(type)
             }
+         
+            self.dogBreed = data
             self.breedListTable.reloadData()
         }
     }
