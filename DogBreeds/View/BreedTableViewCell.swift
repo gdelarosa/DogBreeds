@@ -12,9 +12,4 @@ class BreedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var breedName: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-
 }
