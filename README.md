@@ -7,3 +7,4 @@ Xcode Version: 10
 Pods Used: 
 - Alamofire to assist with the HTTP networking. 
 - ViewAnimator to animate the table view when loaded. 
+- SDWebImage for image downloading.
