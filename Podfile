@@ -6,5 +6,6 @@ target 'DogBreeds' do
 
   pod 'Alamofire', '~> 4.7'
   pod 'ViewAnimator'
+  pod 'SDWebImage', '~> 4.0'
 
 end

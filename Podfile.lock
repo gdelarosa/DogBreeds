@@ -1,20 +1,26 @@
 PODS:
   - Alamofire (4.7.3)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - ViewAnimator (2.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - SDWebImage (~> 4.0)
   - ViewAnimator
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - SDWebImage
     - ViewAnimator
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   ViewAnimator: a849844cc3698620e1a562b510ed0c28aeafcdc5
 
-PODFILE CHECKSUM: 9336c415f773b712bdc712481bd247c1c1d4e0d9
+PODFILE CHECKSUM: 2715e29389d5d6084a7ab657a85d8a977c3e011a
 
 COCOAPODS: 1.5.3

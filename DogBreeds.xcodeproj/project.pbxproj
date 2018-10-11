@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770BD404216FCAE600FFAB86 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770BD403216FCAE600FFAB86 /* ImageCollectionViewCell.swift */; };
 		77CD9460216CF4060089D0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD945F216CF4060089D0C5 /* AppDelegate.swift */; };
 		77CD9462216CF4060089D0C5 /* BreedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD9461216CF4060089D0C5 /* BreedViewController.swift */; };
 		77CD9465216CF4060089D0C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77CD9463216CF4060089D0C5 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		770BD403216FCAE600FFAB86 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		77CD945C216CF4060089D0C5 /* DogBreeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBreeds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77CD945F216CF4060089D0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77CD9461216CF4060089D0C5 /* BreedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				77CD9471216CF5650089D0C5 /* BreedTableViewCell.swift */,
+				770BD403216FCAE600FFAB86 /* ImageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,11 +227,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DogBreeds/Pods-DogBreeds-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				770BD404216FCAE600FFAB86 /* ImageCollectionViewCell.swift in Sources */,
 				77CD9472216CF5650089D0C5 /* BreedTableViewCell.swift in Sources */,
 				77CD9474216CF5870089D0C5 /* Breed.swift in Sources */,
 				77CD947A216D513D0089D0C5 /* Router.swift in Sources */,

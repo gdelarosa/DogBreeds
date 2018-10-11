@@ -9,16 +9,22 @@
 
 import UIKit
 import ViewAnimator
+import SDWebImage
 
-class BreedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BreedViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var breedListTable: UITableView!
+    @IBOutlet weak var imageCollectionView: UICollectionView!
     
     // MARK: - Properties
     var dogBreed: [Breed]!
+    var dogImage: [Image]!
     let router = ApiRouter()
+    
     var results: [String] = []
+    //var imageResults: [String] = []
+    var imageResults = [String]()
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -26,7 +32,8 @@ class BreedViewController: UIViewController, UITableViewDelegate, UITableViewDat
         breedListTable.prefetchDataSource = self
         presentAnimation()
         requestFromApi()
-        
+        requestImages()
+
     }
     
     /// Presents animation when tableview is loaded
@@ -46,17 +53,46 @@ class BreedViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 print("Error: \(String(describing: error))")
             }
             
-            let array = Array(self.dogBreed[0].message.keys.sorted())
+            let array = self.dogBreed[0].message.keys.sorted()
             for type in array {
                 self.results.append(type)
             }
          
-            self.dogBreed = data
+            //self.dogBreed = data
             self.breedListTable.reloadData()
         }
     }
+    
+    /// Requesting Images to be displayed onto the collectionview
+    func requestImages() {
+        router.requestImages { (images, error) in
+            
+            if let imageData = images {
+                self.dogImage = imageData
+            } else {
+                print("Error: \(String(describing: error))")
+            }
+           
+            let imageArray = self.dogImage[0].message
+          
+            for imageType in imageArray {
+                self.imageResults.append(imageType)
+            }
+            
+            self.dogImage = images
+            self.imageCollectionView.reloadData()
+        }
+    }
 
-    // MARK: - Table View Configuration
+}
+
+// MARK: - Table View Configuration
+extension BreedViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "BREEDS"
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
@@ -66,14 +102,10 @@ class BreedViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.breedName.text = results[indexPath.row]
         
-        return cell 
+        return cell
     }
-
-}
-
-// MARK: - Enhancing smooth scrolling with the pre-fetching API protocol
-extension BreedViewController: UITableViewDataSourcePrefetching {
     
+    // MARK: - Enhancing smooth scrolling with the pre-fetching API protocol
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for item in indexPaths {
             print ( "Prefetching Rows: \( item.row)" )
@@ -85,6 +117,22 @@ extension BreedViewController: UITableViewDataSourcePrefetching {
             print ( "Prefetching Cancelled: \( item.row)" )
         }
     }
+}
 
+// MARK: - Displaying random images of breeds in a collectionview.
+extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageResults.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
+     
+        cell.randomImage.sd_setImage(with: URL(string: imageResults[indexPath.row]), placeholderImage: UIImage(named: ""))
+
+        return cell
+    }
 }
 

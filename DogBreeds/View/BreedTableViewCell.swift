@@ -11,5 +11,6 @@ import UIKit
 class BreedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var breedName: UILabel!
+    @IBOutlet weak var breedImage: UIImageView!
     
 }

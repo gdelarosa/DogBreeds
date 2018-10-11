@@ -13,7 +13,12 @@ import Foundation
 struct Breed : Codable {
     let status: String
     let message: [String: [String]]
-    
+}
+
+/// Will hold image data
+struct Image: Codable {
+    let status: String
+    let message: [String]
 }
 
 
