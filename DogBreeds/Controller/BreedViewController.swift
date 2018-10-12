@@ -16,19 +16,19 @@ class BreedViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var breedListTable: UITableView!
     @IBOutlet weak var imageCollectionView: UICollectionView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     
     // MARK: - Properties
     var dogBreed: [Breed]!
     var dogImage: [Image]!
     let router = ApiRouter()
-    
     var results: [String] = []
-    //var imageResults: [String] = []
     var imageResults = [String]()
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loading.startAnimating()
         breedListTable.prefetchDataSource = self
         presentAnimation()
         requestFromApi()
@@ -57,8 +57,6 @@ class BreedViewController: UIViewController {
             for type in array {
                 self.results.append(type)
             }
-         
-            //self.dogBreed = data
             self.breedListTable.reloadData()
         }
     }
@@ -79,8 +77,8 @@ class BreedViewController: UIViewController {
                 self.imageResults.append(imageType)
             }
             
-            self.dogImage = images
             self.imageCollectionView.reloadData()
+            self.loading.stopAnimating()
         }
     }
 
@@ -119,7 +117,7 @@ extension BreedViewController: UITableViewDelegate, UITableViewDataSource, UITab
     }
 }
 
-// MARK: - Displaying random images of breeds in a collectionview.
+// MARK: - Displaying random images of dogs in a collection view.
 extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
