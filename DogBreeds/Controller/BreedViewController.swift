@@ -72,7 +72,6 @@ class BreedViewController: UIViewController {
             }
            
             let imageArray = self.dogImage[0].message
-          
             for imageType in imageArray {
                 self.imageResults.append(imageType)
             }

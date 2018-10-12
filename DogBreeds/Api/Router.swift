@@ -27,7 +27,7 @@ class ApiRouter {
         }
     }
     
-    /// Requesting the breed images.
+    /// Requesting random breed images.
     func requestImages(completion: @escaping([Image]?, Error?) -> Void) {
         
         let URL = "https://dog.ceo/api/breeds/image/random/10"

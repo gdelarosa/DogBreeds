@@ -28,6 +28,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OUX-Jh-uUY" secondAttribute="bottom" constant="294" id="GjJ-ka-y57"/>
                             <constraint firstItem="OUX-Jh-uUY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="151" id="Kyc-fQ-kaY"/>
+                            <constraint firstItem="OUX-Jh-uUY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZJw-gK-0OF"/>
                             <constraint firstItem="OUX-Jh-uUY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aap-xb-gbr"/>
                             <constraint firstItem="OUX-Jh-uUY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="274" id="x4Q-Vs-aKW"/>
                         </constraints>
