@@ -1,9 +1,13 @@
 # DogBreeds
 
-Goal: Display dog breeds on a tableview with smooth scrolling.
+Displays dog breeds on a tableview with smooth scrolling.
+
 API: https://dog.ceo/api/breeds/list/all 
+
 Language: Swift 4.2 
+
 Xcode Version: 10
+
 Pods Used: 
 - Alamofire to assist with the HTTP networking. 
 - ViewAnimator to animate the table view when loaded. 
