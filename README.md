@@ -8,3 +8,5 @@ Pods Used:
 - Alamofire to assist with the HTTP networking. 
 - ViewAnimator to animate the table view when loaded. 
 - SDWebImage for image downloading.
+
+![](https://media.giphy.com/media/9M1yKvHCfTtm1gMAsH/giphy.gif)
